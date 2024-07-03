@@ -3,30 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Application</title>
+    <title>RecipeGuide</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Web Application</h1>
+        <h1>RecipeGuide</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="signup">Sign Up</a></li>
+                <li><a href="#" id="login">Login</a></li>
+                <li><a href="#" id="recipes">Recipes</a></li>
+                <li>
+                    <input type="text" id="ingredient-input" placeholder="Enter ingredients">
+                    <button id="find-recipes-button">Find Recipes</button>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section>
-            <p>This is a simple test HTML file to get you 
-               started with your project.</p>
-            <button id="testButton">Click Me</button>
+    <main id="content">
+        <section id="home-view" class="view active">
+            <div class="home-content">
+                <h2>Welcome to RecipeGuide</h2>
+                <p>Are you sick of browsing through countless tabs on the internet & recipe books? Feeling overwhelmed by the chaos in your kitchen? Well, fear not because I have the ultimate solution for you!</p>
+                <p>RecipeGuide is your ultimate solution for simplifying recipe management. With RecipeGuide, users are able to add, view, edit, and browse recipes, ensuring they have a great and effective experience when preparing their meals. Explore recipes effortlessly. Additionally, you can also input ingredients you have on hand, and RecipeGuide will suggest recipes you can make right now!</p>
+            </div>
+        </section>
+        <section id="signup-view" class="view hidden">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+        <section id="login-view" class="view hidden">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section id="recipes-view" class="view hidden">
+            <h2>Recipes</h2>
+            <ul id="recipe-list"></ul>
+            <button id="add-recipe-button">Add Recipe</button>
+        </section>
+        <section id="recipe-form-view" class="view hidden">
+            <h2 id="recipe-form-title">Add Recipe</h2>
+            <form id="recipe-form">
+                <label for="recipe-title">Title:</label>
+                <input type="text" id="recipe-title" required>
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea id="recipe-ingredients" rows="5" required></textarea>
+                <label for="recipe-instructions">Instructions:</label>
+                <textarea id="recipe-instructions" rows="5" required></textarea>
+                <label for="recipe-image">Image URL:</label>
+                <input type="url" id="recipe-image">
+                <button type="submit">Save Recipe</button>
+            </form>
+        </section>
+        <section id="recipe-detail-view" class="view hidden">
+            <h2 id="recipe-detail-title"></h2>
+            <p id="recipe-detail-ingredients"></p>
+            <p id="recipe-detail-instructions"></p>
+            <img id="recipe-detail-image" src="" alt="Recipe Image">
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 My Web Application</p>
-    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
 
-
-
-  <footer>
-    <p>&copy; 2024 RecipeGuide. All rights reserved.</p>
-  </footer>
-</body>
-</html>
